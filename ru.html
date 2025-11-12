@@ -23,6 +23,41 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 		rel="stylesheet">
+
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			console.log("✅ DOM is loaded");
+
+			// Initialize EmailJS
+			emailjs.init("nsQaV14nXoIznXuxD"); // <-- your public key here
+
+			const form = document.getElementById('form-contact');
+			console.log("Form found:", form);
+
+			form.addEventListener('submit', function (event) {
+				event.preventDefault();
+				console.log("Submitting form...");
+
+				emailjs.sendForm('service_xjpg0bm', 'template_r2yjdcu', this)
+					.then(() => {
+						console.log("✅ SUCCESS: Email sent");
+						alert("Message sent successfully!");
+					}, (error) => {
+						console.error("❌ FAILED:", error);
+						alert("Failed to send message.");
+					});
+				emailjs.sendForm('service_xjpg0bm', 'template_455gg7h', this)
+					.then(() => {
+						console.log("✅ Sent auto reply to user");
+						alert("Message sent successfully!");
+					}, (error) => {
+						console.error("❌ Failed sending auto reply:", error);
+						alert("Failed to send message.");
+					});
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -37,12 +72,13 @@
 						<ul class="nav__list d-md-block">
 							<li class="nav__list-item "><a href="index.html" class="hover-target">English</a>
 							</li>
-							<li class="nav__list-item active-nav"><a href="ru.html" class="hover-target">Русский</a></li>
+							<li class="nav__list-item active-nav"><a href="ru.html" class="hover-target">Русский</a>
+							</li>
 						</ul>
 						<h3 class="text-white fw-bold nav__block-item">Контакт</h3>
 						<ul class="list-unstyled text-light nav__block-item">
 							<li class="menu-item">
-								<i class="icon icon-location me-2"></i>Shahr-e-Naw, Kabul, Afghanisatn 
+								<i class="icon icon-location me-2"></i>Shahr-e-Naw, Kabul, Afghanisatn
 							</li>
 							<li class="menu-item">
 								<i class="icon icon-phone me-2"></i>+93 792 205 995
@@ -128,19 +164,25 @@
 					</figure>
 				</div>
 				<div class="col-md-6 description text-lead">
-					<p><strong>Меня зовут Алитеймор Самизада, я архитектор и дизайнер с более чем 4-летним опытом работы в сфере
-архитектуры, ландшафтного дизайна и визуализации. Я имею степени бакалавра и магистра
-по архитектуре и ландшафтному дизайну в Университете Сатпаева, где я заложила прочный фундамент
-в области креативного и устойчивого дизайна.</strong></p>
-					<p>Я сотрудничал с такими известными студиями, как «Новый Дом», Elzat Muqash, Dream Studio и Emaar Stahkom, участвуя в реализации разнообразных жилых, коммерческих и ландшафтных проектов.
-Мой подход сочетает функциональность и эстетическое совершенство, создавая пространства, которые вдохновляют и
-долговечны.
-Знаю толк в 3ds Max, AutoCAD, Revit, Corona, V-Ray, D5, Lumion и Photoshop, воплощаю идеи
-в жизнь с точностью и креативностью. Свободно владею дари, английским, русским, казахским и хинди.
-Я успешно работаю в многонациональных командах и на международных проектах.
+					<p><strong>Меня зовут Алитеймор Самизада, я архитектор и дизайнер с более чем 4-летним опытом работы
+							в сфере
+							архитектуры, ландшафтного дизайна и визуализации. Я имею степени бакалавра и магистра
+							по архитектуре и ландшафтному дизайну в Университете Сатпаева, где я заложила прочный
+							фундамент
+							в области креативного и устойчивого дизайна.</strong></p>
+					<p>Я сотрудничал с такими известными студиями, как «Новый Дом», Elzat Muqash, Dream Studio и Emaar
+						Stahkom, участвуя в реализации разнообразных жилых, коммерческих и ландшафтных проектов.
+						Мой подход сочетает функциональность и эстетическое совершенство, создавая пространства, которые
+						вдохновляют и
+						долговечны.
+						Знаю толк в 3ds Max, AutoCAD, Revit, Corona, V-Ray, D5, Lumion и Photoshop, воплощаю идеи
+						в жизнь с точностью и креативностью. Свободно владею дари, английским, русским, казахским и
+						хинди.
+						Я успешно работаю в многонациональных командах и на международных проектах.
 					</p>
-					<p>Моя цель — проектировать инновационные, экологичные и визуально привлекательные пространства, которые обогащают
-жизнь людей и их связь с окружающей средой.</p>
+					<p>Моя цель — проектировать инновационные, экологичные и визуально привлекательные пространства,
+						которые обогащают
+						жизнь людей и их связь с окружающей средой.</p>
 
 				</div>
 
@@ -344,7 +386,7 @@
 							class="img-fluid" alt="portfolio"></a>
 				</div>
 			</div>
-			
+
 		</div>
 	</section>
 
@@ -364,9 +406,10 @@
 						<span class="number">01</span>
 						<h3>Дизайн интерьера</h3>
 						<p>Мы создаём интерьеры, сочетающие красоту, комфорт и функциональность. Каждое пространство
-продуманно спроектировано, чтобы отражать вашу индивидуальность и образ жизни, обеспечивая
-безупречную функциональность. От разработки концепции до выбора материалов и визуализации,
-мы создаём интерьеры, неподвластные времени, которые вдохновляют и улучшают повседневную жизнь.
+							продуманно спроектировано, чтобы отражать вашу индивидуальность и образ жизни, обеспечивая
+							безупречную функциональность. От разработки концепции до выбора материалов и визуализации,
+							мы создаём интерьеры, неподвластные времени, которые вдохновляют и улучшают повседневную
+							жизнь.
 						</p>
 					</div>
 				</div>
@@ -375,11 +418,14 @@
 					<div class="services-item">
 						<span class="number">02</span>
 						<h3>Внешний дизайн</h3>
-						<p>Наши проекты экстерьера гармонично сочетают форму и функциональность, создавая яркие архитектурные решения.
-Мы уделяем особое внимание пропорциям, текстуре и гармонии материалов, чтобы воплотить вашу задумку в жизнь — будь то
-современный фасад, классическая реконструкция или полномасштабная архитектурная концепция. Каждая
+						<p>Наши проекты экстерьера гармонично сочетают форму и функциональность, создавая яркие
+							архитектурные решения.
+							Мы уделяем особое внимание пропорциям, текстуре и гармонии материалов, чтобы воплотить вашу
+							задумку в жизнь — будь то
+							современный фасад, классическая реконструкция или полномасштабная архитектурная концепция.
+							Каждая
 
-деталь призвана улучшить как эстетическую привлекательность, так и долговечность здания.
+							деталь призвана улучшить как эстетическую привлекательность, так и долговечность здания.
 						</p>
 					</div>
 
@@ -389,10 +435,12 @@
 					<div class="services-item">
 						<span class="number">03</span>
 						<h3>Ландшафтный дизайн</h3>
-						<p>Мы проектируем ландшафты, которые объединяют людей с природой посредством гармонии, устойчивого развития и творчества. От частных садов до больших открытых пространств — наш подход объединяет
-природную красоту с практичностью, обеспечивая уют, сбалансированность и
-живость каждой среды. Результат — это отдых на природе, который
-дополняет и завершает архитектуру.
+						<p>Мы проектируем ландшафты, которые объединяют людей с природой посредством гармонии,
+							устойчивого развития и творчества. От частных садов до больших открытых пространств — наш
+							подход объединяет
+							природную красоту с практичностью, обеспечивая уют, сбалансированность и
+							живость каждой среды. Результат — это отдых на природе, который
+							дополняет и завершает архитектуру.
 						</p>
 					</div>
 				</div>
@@ -438,7 +486,7 @@
 									<div class="post-content">
 										<div class="meta-date">1 сентября 2025 г.</div>
 										<h3 class="post-title"><a href="#">Современная гостиная, современный тренд
-дизайн</a></h3>
+												дизайн</a></h3>
 									</div>
 								</article>
 
@@ -510,25 +558,20 @@
 							<h2 class="section-title light">Контакты</h2>
 						</div>
 
-						<p>Если у вас есть вопросы о нашей работе или компании? Расскажите нам, как мы можем вам помочь.</p>
+						<p>Если у вас есть вопросы о нашей работе или компании? Расскажите нам, как мы можем вам помочь.
+						</p>
 
-						<form id="form-contact" class="form-light" action="contact.php">
-							<p>
-								<input type="text" name="name" placeholder="Ваше полное имя*" required>
-							</p>
-							<p>
-								<input type="text" name="email" placeholder="Ваш электронный адрес" required>
-							</p>
-							<p>
-								<textarea name="message" placeholder="Ваше сообщение" required></textarea>
-							</p>
+						<form id="form-contact" class="form-light">
+							<p><input type="text" name="name" placeholder="Вашa имя*" required></p>
+							<p><input type="email" name="email" placeholder="Ваш электронной почты" required></p>
+							<p><textarea name="message" placeholder="Ваше сообщение" required></textarea></p>
 							<p>
 								<label for="agree">
-									<input id="agree" name="agree" type="checkbox" required></input>
+									<input id="agree" name="agree" type="checkbox" required>
 									<span>Я согласен с политикой конфиденциальности</span>
 								</label>
 							</p>
-							<button class="btn btn-accent btn-rounded btn-xlarge btn-full">отправка</button>
+							<button type="submit" class="btn btn-accent btn-rounded btn-xlarge btn-full">отправка</button>
 						</form>
 
 
@@ -613,11 +656,12 @@
 								<i class="icon icon-phone"></i>+7 708 165 3115
 							</li>
 							<li class="menu-item">
-								<i class="icon icon-envelope-o"></i><a href="mailto:alitemor2013@gmail.com"style="text-transform:none;" >alitemor2013@gmail.com</a>
+								<i class="icon icon-envelope-o"></i><a href="mailto:alitemor2013@gmail.com"
+									style="text-transform:none;">alitemor2013@gmail.com</a>
 							</li>
 						</ul>
 					</div>
-				
+
 				</div>
 
 				<div class="col-md-3">
@@ -626,13 +670,13 @@
 						<h5><a href="./gallery.html">Галерея</a></h5>
 						<div class="gallery">
 							<a href="./gallery.html" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" ><img
+								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))"><img
 									src="images/postimg1.jpg" alt="house" class="gallery-image"></a>
 							<a href="./gallery.html" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" ><img
+								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))"><img
 									src="images/postimg2.jpg" alt="house" class="gallery-image"></a>
 							<a href="./gallery.html" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" ><img
+								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))"><img
 									src="images/postimg3.jpg" alt="house" class="gallery-image"></a>
 						</div>
 					</div>
