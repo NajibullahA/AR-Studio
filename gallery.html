@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Design Collections</title>
+  <link rel="stylesheet" href="./css/gallery.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="./images/logo.png" alt="Logo" />
+        <span class="brand-name">AR-ARCHITECT Studio</span>
+      </div>
+      <div class="header-text">
+        <h1>Design Collections</h1>
+        <p>Explore our creative work — interior, exterior, and landscapes</p>
+      </div>
+      <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Interior Section -->
+    <section id="interior" class="gallery-section">
+      <h2>Interior Design Collection</h2>
+      <div class="gallery-grid">
+        <img src="https://picsum.photos/600/400?random=11" alt="Interior 1" />
+        <img src="https://picsum.photos/600/400?random=12" alt="Interior 2" />
+        <img src="https://picsum.photos/600/400?random=13" alt="Interior 3" />
+        <img src="https://picsum.photos/600/400?random=14" alt="Interior 4" />
+        <img src="https://picsum.photos/600/400?random=15" alt="Interior 5" />
+        <img src="https://picsum.photos/600/400?random=16" alt="Interior 6" />
+      </div>
+    </section>
+
+    <!-- Exterior Section -->
+    <section id="exterior" class="gallery-section">
+      <h2>Exterior Design Collection</h2>
+      <div class="gallery-grid">
+        <img src="https://picsum.photos/600/400?random=21" alt="Exterior 1" />
+        <img src="https://picsum.photos/600/400?random=22" alt="Exterior 2" />
+        <img src="https://picsum.photos/600/400?random=23" alt="Exterior 3" />
+        <img src="https://picsum.photos/600/400?random=24" alt="Exterior 4" />
+        <img src="https://picsum.photos/600/400?random=25" alt="Exterior 5" />
+        <img src="https://picsum.photos/600/400?random=26" alt="Exterior 6" />
+      </div>
+    </section>
+
+    <!-- Landscape Section -->
+    <section id="landscape" class="gallery-section">
+      <h2>Landscape Collection</h2>
+      <div class="gallery-grid">
+        <img src="https://picsum.photos/600/400?random=31" alt="Landscape 1" />
+        <img src="https://picsum.photos/600/400?random=32" alt="Landscape 2" />
+        <img src="https://picsum.photos/600/400?random=33" alt="Landscape 3" />
+        <img src="https://picsum.photos/600/400?random=34" alt="Landscape 4" />
+        <img src="https://picsum.photos/600/400?random=35" alt="Landscape 5" />
+        <img src="https://picsum.photos/600/400?random=36" alt="Landscape 6" />
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" />
+  </div>
+
+  <script src="./js/gallery.js"></script>
+</body>
+</html>
